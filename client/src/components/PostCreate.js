@@ -4,10 +4,10 @@ const PostCreate = () => {
 
     const titleRef = useRef();
 
-    const createPost = (e) => {
+    const createPost = async (e) => {
         e.preventDefault();
         const title = titleRef.current.value;
-        axios.post('http://localhost:3001/posts', {
+        await axios.post('http://localhost:3001/posts', {
             title
         });
         titleRef.current.value = "";
