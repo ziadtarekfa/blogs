@@ -25,6 +25,6 @@ app.post('/posts', (req, res) => {
     res.status(201).send(posts[id]);
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("Listening on port 3000");
 });
