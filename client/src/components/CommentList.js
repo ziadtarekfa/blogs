@@ -6,8 +6,18 @@ const CommentList = ({ comments }) => {
             <ul>
                 {
                     comments.map((comment) => {
+                        let content;
+                        if (comment.status === 'approved') {
+                            content = comment.content;
+                        }
+                        else if (comment.status === 'pending') {
+                            content = 'This comment is awaiting moderation';
+                        }
+                        else {
+                            content = 'This comment has been rejected';
+                        }
                         return (
-                            <li>{comment.content}</li>
+                            <li>{content}</li>
                         )
                     })
                 }
