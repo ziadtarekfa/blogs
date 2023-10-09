@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 app.use(cors({
     origin: '*'
 }));
+
 const posts = {};
 
 app.get('/posts', (_req, res) => {

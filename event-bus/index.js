@@ -15,10 +15,18 @@ app.post('/events', (req, res) => {
 
     const event = req.body;
     events.push(event);
-    axios.post('http://localhost:3001/events', event);
-    axios.post('http://localhost:4000/events', event);
-    axios.post('http://localhost:4004/events', event);
-    axios.post('http://localhost:4005/events', event);
+    axios.post('http://localhost:3001/events', event).catch((err) => {
+        console.log(err.message);
+    });;
+    axios.post('http://localhost:4000/events', event).catch((err) => {
+        console.log(err.message);
+    });;
+    axios.post('http://localhost:4004/events', event).catch((err) => {
+        console.log(err.message);
+    });;
+    axios.post('http://localhost:4005/events', event).catch((err) => {
+        console.log(err.message);
+    });;
     res.send({ status: 'OK' });
 });
 
